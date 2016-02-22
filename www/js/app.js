@@ -33,8 +33,6 @@ angular.module('starter', ['ionic', 'ngIOS9UIWebViewPatch', 'starter.services', 
 
   });
 
-  SyncService.initialSync();
-
 }])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -58,20 +56,6 @@ angular.module('starter', ['ionic', 'ngIOS9UIWebViewPatch', 'starter.services', 
         'accounts-tab': {
           templateUrl: RESOURCE_ROOT +  'templates/accounts.html',
           controller: 'AccountsCtrl',
-          controllerAs: 'vm'
-        }
-      }
-    })
-
-
-    // the router info for our account's details page
-    // Note we have a "accountId" state param available to our angular code
-    .state('tab.accounts-detail', {
-      url: '/account/:accountId',
-      views: {
-        'accounts-tab': {
-          templateUrl: RESOURCE_ROOT + 'templates/account.html',
-          controller: 'AccountCtrl',
           controllerAs: 'vm'
         }
       }

@@ -16,9 +16,7 @@
   function AccountService(devUtils) {
 
   	return {
-	    all: all,
-
-	    get: get
+	    all: all
 	  };
 
 	  /**
@@ -34,24 +32,6 @@
 	        reject(resObject);
 	      });
 	    });
-	  }
-
-	  /**
-	   * @function get
-	   * @description Gets a single account by Id
-	   * @param  {string} id
-	   * @return {promise} Resolves to a single account object
-	   */
-	  function get(id){
-	  	return new Promise(function(resolve, reject) {
-        var smartSql = "SELECT * from {Account__ap} WHERE {Account__ap:Id} = '" + id + "'";
-        devUtils.smartSql(smartSql).then(function(resObject) {
-          console.log('resObject', resObject);
-          resolve(resObject.records[0]);
-        }).catch(function(resObject){
-          reject(resObject);
-        });
-      });
 	  }
 
   }

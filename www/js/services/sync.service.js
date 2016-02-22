@@ -15,14 +15,7 @@
 
   function SyncService($rootScope, devUtils) {
 
-  	var appTables = [
-  		'Account__ap',
-  		'Contact__ap'
-  		];
-
 	  return {
-
-	  	initialSync: initialSync,
 
 	    getSyncLock: function(syncLockName){
 	      var syncLock = localStorage.getItem(syncLockName);
@@ -57,36 +50,6 @@
 	    syncTables: syncTables
 	  };
 
-
-	  /**
-	   * @function initialSync
-	   * @description Makes initialSync call for all (biz logic) tables
-	   * @return {promise}
-	   */
-	  function initialSync() {
-      return new Promise(function(resolve, reject) {
-      	if (!localStorage.getItem('initialSync')) {
-	      	console.log('initialSync');
-			    devUtils.initialSync(appTables).then(function(res){
-			    	localStorage.setItem('initialSync', 'done');
-			      $rootScope.$emit('syncTables', {result : "InitialLoadComplete"});
-			      resolve(res);
-			    }).catch(function(resObject){
-	          logger.error('initialSync ',resObject);
-	          reject(resObject);
-	        });
-			  } else {
-			  	console.log("initialSync done, perfomring normal sync");
-			  	syncTables(appTables, true, 1000 *60).then(function(res){
-			  		console.log('syncTables res', res);
-			  		resolve(res);
-			  	}).catch(function(e){
-			  		logger.error(e);
-			  		reject(e);
-			  	});
-			  }
-		  });
-	  }
 
 		function  syncTables(tablesToSync, syncWithoutLocalUpdates, maxTableAge) {
 	    if (typeof(maxTableAge) == "undefined") {

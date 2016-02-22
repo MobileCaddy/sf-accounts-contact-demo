@@ -39,7 +39,7 @@
 		  AccountService.all().then(function(accounts) {
 		    vm.accounts = accounts;
 		    console.log('AccountsCtrl, got accounts', vm.accounts);
-		    if (accounts.length > 0) $ionicLoading.hide();
+		    $ionicLoading.hide();
 		  }, function(e) {
 		    $ionicLoading.hide();
 		    logger.error('error', e);
