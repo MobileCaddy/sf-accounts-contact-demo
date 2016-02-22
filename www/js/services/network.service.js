@@ -20,7 +20,7 @@
 	        // You could put some actions in here that you want to take place when
 	        // your app regains connectivity. For example see the Mobile Seed Apps
 	        // If you don't need this then you can ignore this. e.g.
-	        SyncService.syncTables(['Contact__ap', 'Account__ap']);
+	        // SyncService.syncTables(['Contact__ap', 'Account__ap']);
 	      }
 	      localStorage.setItem('networkStatus', status);
 	      logger.log("NetworkService " + status);

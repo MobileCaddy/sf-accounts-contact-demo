@@ -1,7 +1,7 @@
 
 angular.module('starter', ['ionic', 'ngIOS9UIWebViewPatch', 'starter.services', 'starter.controllers'])
 
-.run(['$ionicPlatform', 'NetworkService', 'AppRunStatusService', 'SyncService', function($ionicPlatform, NetworkService, AppRunStatusService, SyncService) {
+.run(['$ionicPlatform', 'NetworkService', 'AppRunStatusService', function($ionicPlatform, NetworkService, AppRunStatusService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -33,7 +33,6 @@ angular.module('starter', ['ionic', 'ngIOS9UIWebViewPatch', 'starter.services', 
 
   });
 
-  SyncService.initialSync();
 
 }])
 
@@ -52,27 +51,11 @@ angular.module('starter', ['ionic', 'ngIOS9UIWebViewPatch', 'starter.services', 
     })
 
 
-    .state('tab.accounts', {
-      url: '/accounts',
+    .state('tab.home', {
+      url: '/home',
       views: {
-        'accounts-tab': {
-          templateUrl: RESOURCE_ROOT +  'templates/accounts.html',
-          controller: 'AccountsCtrl',
-          controllerAs: 'vm'
-        }
-      }
-    })
-
-
-    // the router info for our account's details page
-    // Note we have a "accountId" state param available to our angular code
-    .state('tab.accounts-detail', {
-      url: '/account/:accountId',
-      views: {
-        'accounts-tab': {
-          templateUrl: RESOURCE_ROOT + 'templates/account.html',
-          controller: 'AccountCtrl',
-          controllerAs: 'vm'
+        'home-tab': {
+          templateUrl: RESOURCE_ROOT +  'templates/home.html'
         }
       }
     })
@@ -142,7 +125,7 @@ angular.module('starter', ['ionic', 'ngIOS9UIWebViewPatch', 'starter.services', 
       }
     });
 
-  $urlRouterProvider.otherwise('/tab/accounts');
+  $urlRouterProvider.otherwise('/tab/settings');
 
 }]);
 
