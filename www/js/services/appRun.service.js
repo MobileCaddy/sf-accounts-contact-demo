@@ -18,7 +18,7 @@
 	    statusEvent: function(status){
 	      logger.log('AppRunStatusService status ' + status);
 	      if (status == "resume") {
-	      	SyncService.syncTables(['Contact__ap']);
+	      	SyncService.syncTables(['Contact__ap', 'Account__ap']);
 	        // resume();
 	      }
 	    }
