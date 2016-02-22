@@ -1,0 +1,57 @@
+// Import MobileCaddy SCSS
+@import 'mobilecaddy';
+
+// Ionic overrides
+
+$positive:							#2aa3fe;
+$item-divider-bg:				#caecd3;
+$list-header-color:			#caecd3;
+$button-light-border:		#7fd291;
+
+@import "ionic/ionic";
+
+//  A P P    S T A R T    P A G E
+#start-page {
+  // Could style your apps startpage here.
+  height: 4000px; // needed to display whilst Ionic is initialising
+}
+
+#start-page .card {
+  box-shadow: none;
+  background-color : transparent;
+}
+
+#start-page .card .item {
+  border: 0;
+  background-color : transparent;
+}
+
+// your slick app styles can go here...
+
+ion-nav-view { background-color: #fff; }
+
+a.item-content:hover{
+	background-color: $item-divider-bg;}
+
+.card {box-shadow: 0 1px 1px $button-light-border;}
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+   color: grey;
+}
+
+.show-record-modal {
+    width: 60% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 40% !important;
+}
+
+.item-button-right .item-content > .button.mobile-phone {
+  right: 71px;
+}
+
+.modal {
+  top: 5%;
+}
