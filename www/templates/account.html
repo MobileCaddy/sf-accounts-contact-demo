@@ -4,56 +4,5 @@
   </ion-nav-title>
   <ion-content>
 
-    <ion-list ng-controller="ContactsCtrl as contactsVm">
-
-      <ion-item class="item item-icon-right item-button-right contact"
-        collection-repeat="contact in contactsVm.contacts | filter:query"
-        type="item-text-wrap"
-        >
-        <h3>{{::contact.Name}}</h3>
-        <p>{{::contact.Title}}</p>
-        <button class="button button-icon mobile-phone" ng-disabled="contact.MobilePhone">
-        	<i class="icon ion-ios-telephone"
-        	   ng-href="tel:{{::contact.MobilePhone}}"></i>
-      	</button>
-        <button class="button button-icon email" ng-disabled="contact.Email==''">
-        	<i class="icon ion-email"
-          	 ng-href="mailto:{{::contact.Email}}"></i>
-      	</button>
-        <ion-option-button class="button-assertive"
-           ng-click="contactsVm.showEdit($event, contact)">
-		      Edit
-		    </ion-option-button>
-
-      </ion-item>
-    </ion-list>
-
   </ion-content>
 </ion-view>
-
-
-
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  E D I T    M O D A L
--->
-
-<script id="editModal.html" type="text/ng-template">
-  <div class="modal">
-    <ion-header-bar class="bar-light">
-      <button class="button button-icon icon ion-android-close" ng-click="contactsVm.closeModal()"></button>
-      <h1 class="title">Edit Contact - {{::contactsVm.editModal.data.Name}}</h1>
-    </ion-header-bar>
-    <ion-content class="padding">
-      <div class="list">
-        <label class="item item-input item-stacked-label">
-			    <span class="input-label">Email</span>
-			    <input type="email" ng-model="contactsVm.editModal.data.Email">
-			  </label>
-
-        <button class="item button button-block button-stable tops-tab-button" ng-click="contactsVm.saveContact(contactsVm.editModal.data)">
-            Save
-        </button>
-      </div>
-    </ion-content>
-  </div>
-</script>
