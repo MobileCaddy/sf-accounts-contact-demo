@@ -14,9 +14,7 @@
 
   function ContactsService(devUtils) {
   	return {
-  		get: get,
-
-      update: update
+  		get: get
 	  };
 
 	  /**
@@ -29,23 +27,6 @@
         var smartSql = "SELECT * from {Contact__ap} WHERE {Contact__ap:AccountId} = '" + accountId + "'";
         devUtils.smartSql(smartSql).then(function(resObject) {
           resolve(resObject.records);        }).catch(function(resObject){
-          reject(resObject);
-        });
-      });
-    }
-
-
-    /**
-     * @function update
-     * @description Calls devUtils.update for an Contact rec
-     * @return {promise} Resolves to a returnObject (see API docs)
-     */
-    function update(record){
-      return new Promise(function(resolve, reject) {
-        devUtils.updateRecord('Contact__ap', record, 'Id').then(function(resObject) {
-          resolve(resObject);
-        }).catch(function(resObject){
-          logger.error('ContactsService update ', resObject);
           reject(resObject);
         });
       });
