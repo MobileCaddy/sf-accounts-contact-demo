@@ -1,8 +1,11 @@
-# MobileCaddy Shell App - Angular/Ionic
+# Demo - Building an Offline Salesforce.com app with Ionic and MobileCaddy
 
 ## Overview
 
-This is the basic shell application built with [Angular JS](https://angularjs.org/) and the [Ionic Framework](http://ionicframework.com). The idea of the MobileCaddy shell applications are to give developers a barebones starting block in getting building hybrid mobile applications with MobileCaddy.
+This is a demo app that can be used in association with the slides from the MobileCaddy talk on [building an offline Salesforce app with the Ionic and MobileCaddy SDKs](http://developer.mobilecaddy.net/slides/ldn-sf-dug-1602).
+
+The are branches `step-0` to `step-5` that take you through building the app up, along wiith the slides. These branches can be checked out to see the code at that state.
+
 
 ## Getting Started
 
@@ -12,12 +15,10 @@ This is the basic shell application built with [Angular JS](https://angularjs.or
  * ruby
  * sass
 
-
-* Download the [zip](https://github.com/MobileCaddy/shell-ionic/archive/master.zip) and unzip
+* Install the MobileCaddy CLI
 
 ```
-mv shell-ionic-master shell-ionic
-cd shell-ionic
+npm install -g mobilecaddy
 ```
 
 ## What you get (prior to running any installs/grunt tasks)
